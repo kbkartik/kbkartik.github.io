@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+
+  <title>Assailing Falcons</title>
+  
+  <meta name="author" content="Kartik Bharadwaj">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <!-- <link rel="icon" type="image/png" href="images/seal_icon.png">-->
+</head>
+
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>About</heading>
+              <p>
+                <a href="https://www.assailingfalcons.in">Assailing Falcons</a> is an fully student-funded SAE Aircraft Design Team. Falcons takes part in <a href="https://www.sae.org/attend/student-events/about-aero-design">SAE Advance Class Aero Design competition</a> every year. Every year a new cohort of student builds an aircraft for the upcoming competition. The aim of the competition is to drop maximum number of payloads into the drop zone, which are represented by concentric circles on the ground, by flying above 100ft.
+              </p>
+
+              <heading>Falcons in Florida, the Sunshine State!</heading>
+              <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/pZGW3i2ZAU8?autoplay=1">
+              </iframe>
+
+              <heading>Contributions</heading>
+              <p>
+                Our avionics system comprised two crucial components: the Data Acquisition System (DAS) and the Payload Delivery System (PDS). The DAS handled Tx-Rx communication and executed algorithms on the Pixhawk flight controller. The PDS was the electro-mechanical system that dropped payloads based on control inputs from the DAS. My primary objective was to enhance the reliability and precision of the DAS and the PDS.
+
+                This task posed a significant challenge, particularly as the 2016 cohort had faced zero successful payload drops in the competition due to an inefficient PDS, resulting in a score of zero. Achieving a positive flight score was essential for our team to secure a position in the top 10.
+
+                Given the restrictions on gyroscopic stabilization and autonomous flight, we needed accurate manual methods for dropping payloads into designated zones using the DAS. To address this issue, I devised two algorithms:
+
+                <ol type="1">
+                  <li>Dropzone Detection: This algorithm aimed to identify target concentric circles using Hough detection and employed optical flow-based video stabilization on the ground station feed. It took into account the latency in the PDS caused by signal loss.</li>
+                  <br>
+                  <li>VORTEX (Visual Object Recognition Tracking and Extraction): VORTEX computed three crucial parameters—optimal trajectory, range, and flight time—for dropping payloads into the target zone based on video input. The algorithm used Image Moments to determine the centroid of the payload with respect to the frames. Using other aerodynamic parameters such as drag, airspeed, etc., in its calculations, VORTEX generated the optimal trajectory, range, and flight time for the payload dropping.</li>
+                </ol>
+
+                Upon analyzing the previous cohort's aircraft design, it became evident that no test results or mechanisms were in place to evaluate the avionics system's effectiveness. Running multiple experiments and extracting insights from test data was crucial to identifying bottlenecks. However, the lack of proximity to a flight test field (200km away), teammates academic commitments, and financial constraints meant we couldn't afford frequent field test flights.
+
+                To overcome these challenges, a teammate and I built a quadcopter-based testing platform, integrating our avionics for multiple test flights. This initiative significantly reduced testing costs, allowing the team to allocate funds for plane construction. Drone-based tests notably decreased the PDS lag from 45 seconds to 2 seconds, and VORTEX testing provided a 60ft bandwidth, preventing the aircraft from missing the drop zone. Furthermore, the pre-flight check time was reduced from 50 seconds to 18 seconds, aligning with the competition rules.
+
+                In addition to avionics development, I played a crucial role in manufacturing the tail and left wing of the aircraft using balsa wood.
+
+                Participating in the 2017 competition in the US was a valuable experience. As Team Captain, I guided the team through flight rounds, technical inspections, and aircraft presentations. Presenting the avionics system improvements to Lockheed Martin officials, we were credited for pioneering Computer Vision algorithms and drone-based testing to enhance aircraft effectiveness. The Falcons project taught me the significance of test results and experiments in problem-solving and understanding system limitations.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+        
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tbody><tr>
+          <td>
+          <br>
+          <p align="right"><font size="2">
+            <a href="https://people.eecs.berkeley.edu/~barron/">This guy makes a nice webpage.</a>
+            </font>
+          </p>
+          </td>
+         </tr>
+        </tbody></table>
+</body>
+
+</html>
